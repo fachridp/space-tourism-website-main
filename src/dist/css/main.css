@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Pragati+Narrow:wght@400;700&display=swap&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: 'Pragati Narrow', sans-serif;
+ background-color: hsl(208, 20%, 13%);
+ overflow: hidden;
+}
+
+#root {
+ max-width: 1440px;
+ margin: 0 auto;
+}
+
+@layer utilities {
+ li {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: hsl(180, 100%, 99%);
+  letter-spacing: .1em;
+ }
+
+ .nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: hsl(180, 100%, 99%);
+  transition: all 300ms;
+ }
+
+ .nav-link-mobile-active::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: hsl(180, 100%, 99%);
+  transition: all 300ms;
+ }
+
+ h1,
+ main section div:nth-child(2), main section.destination p.distance span {
+  font-family: 'Forum', serif;
+ }
+
+ main section div:first-child p, main section.destination p.distance {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+ }
+}
